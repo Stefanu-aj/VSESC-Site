@@ -8,33 +8,40 @@
     position: absolute;
     inset: 0;
     width: 100%;
-    padding: 0 1rem;
+    padding: clamp(1rem, 4vw, 2rem);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    pointer-events: none;
 }
 .hero .hero-caption-inner {
-    max-width: 900px;
+    max-width: min(95vw, 900px);
     width: 100%;
-    padding: 2rem 2rem;
+    padding: clamp(1.25rem, 3vw, 2.5rem);
     box-sizing: border-box;
-    background-color: rgba(9, 17, 30, 0.4);
-    border-radius: 18px;
-    backdrop-filter: blur(6px);
+    background-color: rgba(8, 12, 20, 0.72);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
     color: white;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    pointer-events: auto;
 }
 .hero .top,
 .hero .text {
     color: white;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
 }
 .hero .top {
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    font-size: clamp(2.4rem, 4vw, 4.8rem);
+    line-height: 1.05;
 }
 .hero .text {
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
 }
 .nav_bar {
     backdrop-filter: blur(10px);
@@ -256,6 +263,14 @@
     width: 100%;
     object-fit: cover;
 }
+
+/* Ensure videos fill the hero area and scale cleanly */
+.hero .carousel-item video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
 .top {
     color: white;
     font-size: 50px;
@@ -277,64 +292,72 @@
 }
 
 @media (max-width: 900px) {
+    .hero {
+        min-height: 90vh;
+    }
+    .hero .hero-caption {
+        padding: clamp(1rem, 3vw, 1.5rem);
+    }
+    .hero .hero-caption-inner {
+        padding: clamp(1.5rem, 3vw, 2rem);
+    }
     .hero .top {
-        font-size: 42px;
+        font-size: clamp(3rem, 5vw, 4.2rem);
     }
     .hero .text {
-        font-size: 18px;
-    }
-    .hero .line {
-        width: 220px;
+        font-size: clamp(1rem, 1.8vw, 1.15rem);
     }
 }
 
 @media (max-width: 680px) {
     .hero {
-        min-height: 70vh;
+        min-height: 75vh;
     }
     .hero .hero-caption {
-        padding: 0 0.75rem;
+        padding: 0.75rem;
     }
     .hero .hero-caption-inner {
-        max-width: 700px;
-        padding: 1.75rem 1.5rem;
-        background-color: rgba(9, 17, 30, 0.55);
+        padding: 1.5rem 1.25rem;
+        background-color: rgba(8, 12, 20, 0.78);
         border-radius: 16px;
     }
+    .hero .carousel-item video {
+        height: 75vh;
+    }
     .hero .top {
-        font-size: 32px;
+        font-size: clamp(2.4rem, 7vw, 3.2rem);
     }
     .hero .text {
-        font-size: 16px;
-        max-width: 90%;
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+        max-width: 100%;
         text-align: center;
         margin: 1rem auto 0;
-    }
-    .hero .line {
-        width: 160px;
     }
 }
 
 @media (max-width: 540px) {
     .hero {
-        min-height: 60vh;
+        min-height: 65vh;
     }
     .hero .hero-caption-inner {
         padding: 1.25rem 1rem;
         border-radius: 14px;
-        background-color: rgba(9, 17, 30, 0.65);
+        background-color: rgba(8, 12, 20, 0.85);
+    }
+    .hero .carousel-item video {
+        height: 65vh;
     }
     .hero .top {
-        font-size: 26px;
+        font-size: clamp(2.2rem, 8vw, 2.6rem);
         line-height: 1.05;
     }
     .hero .text {
-        font-size: 15px;
+        font-size: clamp(0.95rem, 2.5vw, 1rem);
         max-width: 100%;
         margin: 1rem auto 0;
     }
-    .hero .line {
-        width: 130px;
+    .hero .hero-caption {
+        align-items: flex-end;
     }
 }
 .mid_sec {

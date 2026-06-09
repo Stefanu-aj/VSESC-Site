@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!toggle || !menu) return;
 
+    // ensure initial closed state
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+
     function setOpen(open) {
         if (open) {
             menu.hidden = false;
@@ -39,16 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-const navToggle = document.querySelector('.nav-toggle');
-        const mobileMenu = document.querySelector('#mobile-menu');
-
-        if (navToggle && mobileMenu) {
-            navToggle.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.toggle('open');
-                navToggle.setAttribute('aria-expanded', String(isOpen));
-            });
-        }
+// (Duplicate top-level toggle removed — mobile toggle handled above)
 
 
 // ============================================
