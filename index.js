@@ -1,21 +1,28 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.nav-toggle');
     const menu = document.getElementById('mobile-menu');
 
     if (!toggle || !menu) return;
 
-    // ensure initial closed state
     menu.hidden = true;
+    menu.setAttribute('aria-hidden', 'true');
     toggle.setAttribute('aria-expanded', 'false');
 
     function setOpen(open) {
         if (open) {
             menu.hidden = false;
-            requestAnimationFrame(() => menu.classList.add('is-open'));
+            requestAnimationFrame(() => menu.classList.add('open'));
+            document.body.classList.add('no-scroll');
             toggle.setAttribute('aria-expanded', 'true');
+            menu.setAttribute('aria-hidden', 'false');
         } else {
-            menu.classList.remove('is-open');
+            menu.classList.remove('open');
+            document.body.classList.remove('no-scroll');
             toggle.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
             menu.addEventListener('transitionend', function hide() {
                 menu.hidden = true;
                 menu.removeEventListener('transitionend', hide);
@@ -28,23 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
         setOpen(!isOpen);
     });
 
-    // close menu on outside click
     document.addEventListener('click', function (e) {
-        if (!menu.classList.contains('is-open')) return;
+        if (!menu.classList.contains('open')) return;
         if (e.target.closest('.nav_bar') || e.target.closest('#mobile-menu')) return;
         setOpen(false);
     });
 
-    // close on Escape
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+        if (e.key === 'Escape' && menu.classList.contains('open')) {
             setOpen(false);
             toggle.focus();
         }
     });
 });
-// (Duplicate top-level toggle removed — mobile toggle handled above)
-
 
 // ============================================
 // MULTIPLE AUTO-PLAY CAROUSELS FUNCTIONALITY
