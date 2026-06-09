@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Polytechnic Ibadan - Vocation Skill & Entrepreneurship Study Centre</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="/Image/Poly Logo.png">
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" 
+      crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" 
+    crossorigin="anonymous">
+    </script>
+
+    <!-- <NAVBAR> -->
+        
+    <header>
+        <div class="nav_bar">
+            <div class="logo">
+                <img 
+                  src="/Image/VSESC logo.png"
+                  alt="VSESC logo" 
+                  onerror="this.style.display='none'"/>
+            </div>
+
+            <nav class="mid_nav" aria-label="Primary navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#admission">Admissions</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="lg_btn">Login</button>
+                <button class="rg_btn">Register</button>
+                <button 
+                    class="nav-toggle" 
+                    type="button"
+                    aria-label="Toggle menu" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#admission">Admissions</a>
+            <a href="#contact">Contact</a>
+            <div class="menu-actions">
+                <button class="lg_btn">Login</button>
+                <button class="rg_btn">Register</button>
+            </div>
+        </div>
+      </header>
+
+    <!-- <HEROSECTION> -->
+
+    <section class="hero" id="home" aria-label="Hero section">
+
+      <div id="carouselExampleCaptions" 
+        class="carousel slide"
+        data-bs-interval="7000"
+        data-bs-touch="true"
+        data-bs-ride="carousel"
+        aria-label="VSESC hero carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            aria-label="Slide 1"
+            class="active"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <!-- <img src="Image/Front view close.jpg" class="d-block w-100" alt="Front View of Centre" /> -->
+            <video src="videos/Front view.mp4" class="d-block w-100" muted autoplay loop></video>
+            <div class="carousel-caption hero-caption d-flex flex-column h-100 align-items-center justify-content-center">
+              <div class="hero-caption-inner">
+                <h1 class="top">
+                  Welcome to VSESC
+                </h1>
+                <p class="text">
+                  VSESC is a leading educational institution dedicated to providing high-quality education and fostering a vibrant learning community. With a commitment to academic excellence, innovation, and inclusivity, VSESC offers a wide range of programs and opportunities for students to thrive and succeed in their educational journey.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <img src="Image/Right view far.jpg"  class="d-block w-100" alt="Right view of Centre" /> -->
+            <video src="videos/Right view.mp4" class="d-block w-100" muted autoplay loop></video>
+            <div class="carousel-caption hero-caption d-flex flex-column h-100 align-items-center justify-content-center">
+              <div class="hero-caption-inner">
+                <h2 class="top">
+                  Welcome to VSESC
+                </h2>
+                <p class="text">
+                  Our programs blend practical trade skills with entrepreneurship training, helping learners launch careers in construction, hospitality, and sustainable production.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <img src="Image/Left view 1.jpg" class="d-block w-100" alt="Left view of Centre" /> -->
+            <video src="videos/Left view 1.mp4" class="d-block w-100" muted autoplay loop></video>
+            <div class="carousel-caption hero-caption d-flex flex-column h-100 align-items-center justify-content-center">
+              <div class="hero-caption-inner">
+                <h2 class="top">
+                  Welcome to VSESC
+                </h2>
+                <p class="text">
+                  Whether you are starting fresh or upskilling, our center supports growth with hands-on learning, mentorship, and career-focused education.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <MIDSEC> -->
+
+    <section id="courses" class="mid_sec">
+        <div class="way_learn">THERE ARE MANY WAYS TO LEARN</div>
+        <h2 class="our-courses-text">
+          OUR TRADE COURSES
+        </h2>
+        
+        <div class="courses">
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Block Moulding and Concreting course">
+                  <img 
+                  src="Image/Block 1.png"
+                  class="card-img-top" loading="lazy" alt="Block moulding and concreting training session"/>
+                  <div class="card-body">
+                    <h3 class="card-title">Block Moulding and Concreting</h3>
+                    <p class="card-description">Hands-on training in block production, concrete mixing, and site preparation.</p>
+                  </div>
+                </a>
+            </article>
+    
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Household Products course">
+                  <img src="Image/Household 3.png"
+                  class="card-img-top" loading="lazy" alt="Household products training and production">
+                  <div class="card-body">
+                    <h3 class="card-title">Household Products</h3>
+                    <p class="card-description">Create everyday household goods with practical production and packaging skills.</p>
+                  </div>
+                </a>
+            </article>
+    
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Catering and Confectioneries course">
+                  <img src="Image/Cakes 1.png" 
+                  class="card-img-top" loading="lazy" alt="Catering and confectioneries practical class">
+                  <div class="card-body">
+                    <h3 class="card-title">Catering and Confectioneries</h3>
+                    <p class="card-description">Build catering skills with desserts, event catering prep, and service practice.</p>
+                  </div>
+                </a>
+            </article>
+        </div>
+
+        <div class="button-wrapper"> 
+          <a href="#courses" class="btn-course" aria-label="View all trade courses">
+            View All Trade Courses
+          </a> 
+        </div>
+      
+    </section>
+
+    <!-- <MOVINGSEC> -->
+
+    <section class="campus-tour" id="about">
+      <div class="way_learn">Our Campus have varieties to offer students</div>
+        <h2 class="our-courses-text">
+          TAKE A CAMPUS TOUR
+        </h2>
+        
+        <div class="campus-gallery-marquee" aria-label="Campus photo gallery">
+          <div class="campus-gallery-track">
+            <div class="campus-gallery-group">
+              <figure class="campus-gallery-item"><img src="Image/Front view close.jpg" alt="Front entrance close-up" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Front view 1.jpg" alt="Front of campus building" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Front view.jpg" alt="Campus front exterior" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Left view 1.jpg" alt="Left side of campus" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Left view 2.jpg" alt="Left wing of the centre" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view 1.jpg" alt="Right side of campus" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view 2.jpg" alt="Right wing exterior" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view far.jpg" alt="Campus from a distance" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc stairs 1.jpeg" alt="Interior staircase" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc stairs.jpeg" alt="Staircase and hallway" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc working.jpeg" alt="Students at work" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc gallery.jpeg" alt="Campus gallery space" loading="lazy" decoding="async" width="640" height="480"></figure>
+            </div>
+            <div class="campus-gallery-group" aria-hidden="true">
+              <figure class="campus-gallery-item"><img src="Image/Front view close.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Front view 1.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Front view.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Left view 1.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Left view 2.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view 1.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view 2.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/Right view far.jpg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc stairs 1.jpeg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc stairs.jpeg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc working.jpeg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+              <figure class="campus-gallery-item"><img src="Image/vsesc gallery.jpeg" alt="" loading="lazy" decoding="async" width="640" height="480"></figure>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- <FOOTER> -->
+
+    <footer class="footer">
+        <!-- Start Footer Top -->
+        <div class="about_footer">
+            <div class="">
+                <div class="about_footer">
+                    <div class="">
+                        <h3>About</h3>
+                        <p>The Centre was established in compliance with the Federal Government's initiative through NBTE that all tertiary institutions in Nigeria must establish Entrepreneurship Development Centres (EDC) to solve graduates' unemployment crises by ensuring that they acquire functional entrepreneurial skills, desirable work habit in addition to their formal education which will enable them to be self-reliant, self-employed and productive members of the society.</p>
+                    </div>
+                    <div class="">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#courses">Courses</a></li>
+                            <li><a href="#admission">Admisssion</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about_footer">
+                    <div class="">
+                            <h3>
+                              Connect With Us
+                            </h3>
+                            <ul class="">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
