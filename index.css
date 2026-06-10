@@ -170,13 +170,17 @@
     background-color: #5e1e03d9;
     border: 1px solid white;
     color: white;
-    padding: 6px 10px;
-    margin-right: 20px;
+    padding: 6px 12px;
+    margin-inline-end: 20px;
     cursor: pointer;
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
 }
 .rg_btn:hover {
     background-color: #421501;
@@ -186,14 +190,18 @@
 .lg_btn {
     border: 2px solid #5e1e03d9;
     color: #5e1e03d9;
-    padding: 6px 10px;
-    margin-right: 20px;
+    padding: 6px 12px;
+    margin-inline-end: 20px;
     cursor: pointer;
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
     background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
 }
 .lg_btn:hover {
     background-color: #5e1e03d9;
@@ -247,9 +255,10 @@
     .mobile-menu .rg_btn,
     .mobile-menu .lg_btn {
         width: 100%;
-        display: block;
+        display: inline-flex;
         text-align: center;
         align-items: center;
+        justify-content: center;
     }
 }
 @media (max-width: 540px) {
