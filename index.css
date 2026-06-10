@@ -193,7 +193,7 @@
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
-    background-color: whitesmoke;
+    background-color: transparent;
 }
 .lg_btn:hover {
     background-color: #5e1e03d9;
@@ -247,6 +247,9 @@
     .mobile-menu .rg_btn,
     .mobile-menu .lg_btn {
         width: 100%;
+        display: block;
+        text-align: center;
+        align-items: center;
     }
 }
 @media (max-width: 540px) {
