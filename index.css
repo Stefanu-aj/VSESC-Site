@@ -176,10 +176,12 @@
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
+    text-decoration: none;
 }
 .rg_btn:hover {
     background-color: #421501;
     border: 1px solid #421501;
+    text-decoration: none;
 }
 .lg_btn {
     border: 2px solid #5e1e03d9;
@@ -190,11 +192,14 @@
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 600;
+    text-decoration: none;
+    background-color: whitesmoke;
 }
 .lg_btn:hover {
     background-color: #5e1e03d9;
     color: white;
     border: 2px solid white;
+    text-decoration: none;
 }
 @media (max-width: 900px) {
     .mid_nav {
@@ -377,6 +382,79 @@
     font-size: 15px;
     font-weight: 500;
     color: rgb(153, 153, 153);
+}
+.way_learn_1 {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(27, 26, 26);
+}
+.page-intro {
+    max-width: 760px;
+    margin: 0.75rem auto 2rem;
+    color: #4a4f63;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+.course-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+.course-toolbar .tool-group {
+    flex: 1 1 240px;
+    min-width: 220px;
+    max-width: 360px;
+    width: 100%;
+}
+.course-toolbar input,
+.course-toolbar select {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 999px;
+    border: 1px solid #d8d8d8;
+    background-color: #fff;
+    color: #20263a;
+    font-size: 0.96rem;
+    outline: none;
+    box-shadow: 0 6px 20px rgba(15, 25, 45, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.course-toolbar input:focus,
+.course-toolbar select:focus {
+    border-color: #5e1e03d9;
+    box-shadow: 0 10px 25px rgba(94, 30, 3, 0.12);
+}
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    width: 100%;
+}
+@media (max-width: 980px) {
+    .course-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 680px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.mid_nav a[aria-current="page"],
+.mid_nav a.active {
+    color: #ffb03b;
+}
+.mid_nav a[aria-current="page"]::after {
+    width: 100%;
+    background-color: #ffb03b;
 }
 .courses {
     display: flex;

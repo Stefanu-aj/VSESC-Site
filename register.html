@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - The Polytechnic Ibadan</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" type="image/png" href="Image/Poly Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="login-container" role="main">
+        <div class="login-content">
+            <!-- Left: Image/Brand -->
+            <div class="login-image" aria-hidden="true">
+                <div class="login-image-content">
+                    <div class="login-image-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h2>Join VSESC</h2>
+                    <p>Start your hands-on learning journey with practical trade programs and entrepreneurship training.</p>
+                </div>
+            </div>
+
+            <!-- Right: Registration Form -->
+            <div class="login-form">
+                <div class="form-header">
+                    <h1>Create account</h1>
+                    <p class="register-note">Register to access courses, track progress, and join the community.</p>
+                </div>
+
+                <div class="alert" id="alertBox" role="status" aria-live="polite"></div>
+
+                <form id="registerForm" novalidate>
+                    <div class="grid-two">
+                        <div class="form-group">
+                            <label for="fullName">Full name</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name" required>
+                            </div>
+                            <div class="field-error" id="fullNameError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="matricNumber">Matric Number</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="matricNumber" name="matricNumber" placeholder="e.g. 2020/12345" autocomplete="username" required>
+                            </div>
+                            <div class="field-error" id="matricNumberError"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid-two">
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="department" name="department" placeholder="Your department" autocomplete="organization" required>
+                            </div>
+                            <div class="field-error" id="departmentError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="faculty">Faculty</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="faculty" name="faculty" placeholder="Your faculty" autocomplete="organization" required>
+                            </div>
+                            <div class="field-error" id="facultyError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="field-error" id="emailError"></div>
+                    </div>
+
+                    <div class="grid-two">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
+                                <button type="button" class="password-toggle" id="togglePassword" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+                            </div>
+                            <div class="password-strength" aria-hidden="true"><i id="pwStrengthBar"></i></div>
+                            <div class="small-help">Use at least 8 characters with letters and numbers.</div>
+                            <div class="field-error" id="passwordError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat password" autocomplete="new-password" required>
+                            </div>
+                            <div class="field-error" id="confirmPasswordError"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid-two">
+                        <div class="form-group">
+                            <label for="course">Skill of Interest</label>
+                            <div class="input-wrapper">
+                                <select id="course" name="course" required>
+                                    <option value="">Choose a skill</option>
+                                    <option>Block Moulding & Concreting</option>
+                                    <option>Household Products</option>
+                                    <option>Catering & Confectioneries</option>
+                                </select>
+                            </div>
+                            <div class="field-error" id="courseError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="level">Level</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="level" name="level" placeholder="Enter your level" autocomplete="off">
+                            </div>
+                            <div class="field-error" id="levelError"></div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="updates" name="updates">
+                            <label for="updates">Send me course updates</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-btn" id="registerBtn">Create Account</button>
+
+                    <div class="divider">Or sign up with</div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn" aria-label="Sign up with Google"><i class="fab fa-google"></i></button>
+                        <button type="button" class="social-btn" aria-label="Sign up with Microsoft"><i class="fab fa-microsoft"></i></button>
+                    </div>
+
+                    <div class="form-footer">Already have an account? <a href="login.html">Log in</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Helpers
+        const strengthBar = document.getElementById('pwStrengthBar');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+
+        function setAlert(msg, type='error'){
+            const box = document.getElementById('alertBox');
+            box.textContent = msg; box.className = `alert show ${type}`;
+            setTimeout(()=> box.classList.remove('show'), 3500);
+        }
+
+        // Password strength
+        password.addEventListener('input', ()=>{
+            const val = password.value;
+            let score = 0;
+            if (val.length >= 8) score += 1;
+            if (/[a-z]/.test(val) && /[A-Z]/.test(val)) score += 1;
+            if (/[0-9]/.test(val)) score += 1;
+            if (/[^A-Za-z0-9]/.test(val)) score += 1;
+            const pct = (score / 4) * 100;
+            strengthBar.style.width = pct + '%';
+            if (pct < 34) strengthBar.style.background = '#c33';
+            else if (pct < 67) strengthBar.style.background = '#ffb03b';
+            else strengthBar.style.background = '#3c3';
+        });
+
+        // Password toggle
+        document.getElementById('togglePassword').addEventListener('click', function(){
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        // Form validation
+        const form = document.getElementById('registerForm');
+        const level = document.getElementById('level');
+        const typedPreview = document.getElementById('typedPreview');
+
+        level.addEventListener('input', function() {
+            const value = this.value.trim();
+            typedPreview.textContent = value ? `Preview: ${value}` : 'Your level will appear here.';
+        });
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            // Clear previous
+            document.querySelectorAll('.field-error').forEach(el=>el.textContent='');
+
+            let valid = true;
+            const fullName = document.getElementById('fullName');
+            const matric = document.getElementById('matricNumber');
+            const email = document.getElementById('email');
+            const course = document.getElementById('course');
+
+            if (!fullName.value.trim()){ document.getElementById('fullNameError').textContent='Full name required'; valid=false; }
+            if (!matric.value.trim() || !/^\d+/.test(matric.value)){ document.getElementById('matricNumberError').textContent='Valid matric required'; valid=false; }
+            if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ document.getElementById('emailError').textContent='Valid email required'; valid=false; }
+            if (!course.value){ document.getElementById('courseError').textContent='Please choose a course'; valid=false; }
+            if (!level.value.trim()){ document.getElementById('levelError').textContent='Please enter your level'; valid=false; }
+            if (password.value.length < 8){ document.getElementById('passwordError').textContent='Password must be at least 8 characters'; valid=false; }
+            if (password.value !== confirmPassword.value){ document.getElementById('confirmPasswordError').textContent='Passwords do not match'; valid=false; }
+
+            if (!valid) { setAlert('Please fix the highlighted fields'); return; }
+
+            // Simulate success
+            setAlert('Account created — redirecting...', 'success');
+            document.getElementById('registerBtn').classList.add('loading');
+            setTimeout(()=> window.location.href='login.html', 1400);
+        });
+
+        // Social buttons placeholder
+        document.querySelectorAll('.social-btn').forEach(b=> b.addEventListener('click', (e)=>{ e.preventDefault(); setAlert('Social signup coming soon'); }));
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Polytechnic Ibadan - Vocation Skill & Entrepreneurship Study Centre</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="Image/Poly Logo.png">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+</body>
+</html>

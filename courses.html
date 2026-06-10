@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - The Polytechnic Ibadan</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="Image/Poly Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav_bar">
+            <div class="logo">
+                <img src="Image/VSESC logo.png" alt="VSESC logo" onerror="this.style.display='none'" />
+            </div>
+
+            <nav class="mid_nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="courses.html" aria-current="page">Courses</a>
+                <a href="index.html#admission">Admissions</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="lg_btn">Login</a>
+                <a href="register.html" class="rg_btn">Register</a>
+                <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="courses.html" aria-current="page">Courses</a>
+            <a href="index.html#admission">Admissions</a>
+            <a href="index.html#contact">Contact</a>
+            <div class="menu-actions">
+                <a href="login.html" class="lg_btn">Login</a>
+                <a href="register.html" class="rg_btn">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="mid_sec" id="courses" aria-label="Courses page">
+        <div class="way_learn">EXPLORE YOUR FUTURE PATH</div>
+        <h1 class="our-courses-text">OUR COURSES</h1>
+        <p class="page-intro">Choose from hands-on trade programs designed to build practical skills, entrepreneurial confidence, and career-ready experience.</p>
+
+        <div class="course-toolbar">
+            <div class="tool-group">
+                <input id="courseSearch" type="search" placeholder="Search courses..." aria-label="Search courses" />
+            </div>
+            <div class="tool-group">
+                <select id="courseCategory" aria-label="Filter by category">
+                    <option value="">All categories</option>
+                    <option>Construction</option>
+                    <option>Hospitality</option>
+                    <option>Production</option>
+                    <option>Digital Skills</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="courses course-grid">
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Block Moulding and Concreting course">
+                    <img src="Image/Block 1.png" class="card-img-top" loading="lazy" alt="Block moulding and concreting training session" />
+                    <div class="card-body">
+                        <h3 class="card-title">Block Moulding & Concreting</h3>
+                        <p class="card-description">Hands-on training in block production, concrete mixing, and site preparation for building strong foundations.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Household Products course">
+                    <img src="Image/Household 3.png" class="card-img-top" loading="lazy" alt="Household products training and production" />
+                    <div class="card-body">
+                        <h3 class="card-title">Household Products</h3>
+                        <p class="card-description">Learn to create everyday goods with practical production, packaging, and market-ready design techniques.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Catering and Confectioneries course">
+                    <img src="Image/Cake 4.png" class="card-img-top" loading="lazy" alt="Catering and confectioneries practical class" />
+                    <div class="card-body">
+                        <h3 class="card-title">Catering & Confectioneries</h3>
+                        <p class="card-description">Develop food preparation, dessert creation, and hospitality service skills for event and small-business success.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Tailoring and Fashion Design course">
+                    <img src="Image/Fashion 2.png" class="card-img-top" loading="lazy" alt="Tailoring and fashion design class" />
+                    <div class="card-body">
+                        <h3 class="card-title">Tailoring & Fashion Design</h3>
+                        <p class="card-description">Master garment making, pattern cutting, and finishing skills for custom clothing and retail fashion.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Technology and Digital Skills course">
+                    <img src="Image/Digital skill.png" class="card-img-top" loading="lazy" alt="Technology classroom" />
+                    <div class="card-body">
+                        <h3 class="card-title">Technology & Digital Skills</h3>
+                        <p class="card-description">Explore digital tools, basic tech support, and online business skills for modern entrepreneurship.</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card-link" aria-label="Shoe Making">
+                    <img src="Image/Shoe making.png" class="card-img-top" loading="lazy" alt="Students working together" />
+                    <div class="card-body">
+                        <h3 class="card-title">Shoe Making</h3>
+                        <p class="card-description">Learn the art of crafting quality footwear from design to production.</p>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+        <div class="button-wrapper">
+            <a href="register.html" class="btn-course" aria-label="Register for a course">Apply Now</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-about">
+                <h3>About us</h3>
+                <p>The Centre was established in compliance with the Federal Government's initiative through NBTE that all tertiary institutions in Nigeria must establish Entrepreneurship Development Centres (EDC) to solve graduates' unemployment crises by ensuring that they acquire functional entrepreneurial skills, desirable work habits in addition to their formal education.</p>
+            </div>
+            <div class="footer-col footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="index.html#admission">Admission</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-social">
+                <h3>Connect With Us</h3>
+                <p>Follow us for campus news, events, and student success stories.</p>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        menuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.hidden = !isOpen;
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Polytechnic Ibadan</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/png" href="Image/Poly Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-content">
+            <!-- Left Section - Image -->
+            <div class="login-image">
+                <div class="login-image-content">
+                    <div class="login-image-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2>Welcome Back!</h2>
+                    <p>Access your learning journey at The Polytechnic Ibadan's Vocation Skill & Entrepreneurship Study Centre</p>
+                </div>
+            </div>
+
+            <!-- Right Section - Form -->
+            <div class="login-form">
+                <div class="form-header">
+                    <h1>Log In</h1>
+                    <p>Enter your credentials to continue</p>
+                </div>
+
+                <div class="alert" id="alertBox"></div>
+
+                <form id="loginForm">
+                    <!-- Matric Number Field -->
+                    <div class="form-group">
+                        <label for="matricNumber">Matric Number</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="text" 
+                                id="matricNumber" 
+                                name="matricNumber" 
+                                placeholder="Enter your matric number"
+                                required
+                                autocomplete="username"
+                            >
+                        </div>
+                        <div class="field-error" id="matricNumberError"></div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Enter your password"
+                                required
+                                autocomplete="current-password"
+                            >
+                            <button 
+                                type="button" 
+                                class="password-toggle" 
+                                id="togglePassword"
+                                aria-label="Toggle password visibility"
+                            >
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="field-error" id="passwordError"></div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn" id="loginBtn">Log In</button>
+
+                    <!-- Divider -->
+                    <div class="divider">Or continue with</div>
+
+                    <!-- Social Login -->
+                    <div class="social-login">
+                        <button type="button" class="social-btn" aria-label="Login with Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn" aria-label="Login with Microsoft">
+                            <i class="fab fa-microsoft"></i>
+                        </button>
+                    </div>
+
+                    <!-- Sign Up Link -->
+                    <div class="form-footer">
+                        Don't have an account? <a href="register.html">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password Toggle
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Toggle icon
+            this.innerHTML = type === 'password' 
+                ? '<i class="fas fa-eye"></i>' 
+                : '<i class="fas fa-eye-slash"></i>';
+        });
+
+        // Form Validation
+        const loginForm = document.getElementById('loginForm');
+        const matricNumberInput = document.getElementById('matricNumber');
+        const passwordInput_val = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+        const alertBox = document.getElementById('alertBox');
+
+        // Matric number validation regex
+        const matricNumberRegex = /^\d+$/;
+
+        function validateMatricNumber(matricNumber) {
+            return matricNumberRegex.test(matricNumber);
+        }
+
+        function showAlert(message, type = 'error') {
+            alertBox.textContent = message;
+            alertBox.className = `alert show ${type}`;
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        function showFieldError(input, errorElement, message) {
+            input.classList.add('error');
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+        }
+
+        function clearFieldError(input, errorElement) {
+            input.classList.remove('error');
+            input.classList.add('success');
+            errorElement.classList.remove('show');
+        }
+
+        // Real-time matric number validation
+        matricNumberInput.addEventListener('blur', function() {
+            const matricNumberError = document.getElementById('matricNumberError');
+            if (!this.value) {
+                showFieldError(this, matricNumberError, 'Matric number is required');
+            } else if (!validateMatricNumber(this.value)) {
+                showFieldError(this, matricNumberError, 'Please enter a valid matric number');
+            } else {
+                clearFieldError(this, matricNumberError);
+            }
+        });
+
+        // Real-time password validation
+        passwordInput_val.addEventListener('blur', function() {
+            const passwordError = document.getElementById('passwordError');
+            if (!this.value) {
+                showFieldError(this, passwordError, 'Password is required');
+            } else if (this.value.length < 6) {
+                showFieldError(this, passwordError, 'Password must be at least 6 characters');
+            } else {
+                clearFieldError(this, passwordError);
+            }
+        });
+
+        // Form submission
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const matricNumber = matricNumberInput.value;
+            const password = passwordInput_val.value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            // Validation
+            let isValid = true;
+            const matricNumberError = document.getElementById('matricNumberError');
+            const passwordError = document.getElementById('passwordError');
+
+            if (!matricNumber) {
+                showFieldError(matricNumberInput, matricNumberError, 'Matric number is required');
+                isValid = false;
+            } else if (!validateMatricNumber(matricNumber)) {
+                showFieldError(matricNumberInput, matricNumberError, 'Please enter a valid matric number');
+                isValid = false;
+            } else {
+                clearFieldError(matricNumberInput, matricNumberError);
+            }
+
+            if (!password) {
+                showFieldError(passwordInput_val, passwordError, 'Password is required');
+                isValid = false;
+            } else if (password.length < 6) {
+                showFieldError(passwordInput_val, passwordError, 'Password must be at least 6 characters');
+                isValid = false;
+            } else {
+                clearFieldError(passwordInput_val, passwordError);
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            // Add loading state
+            loginBtn.classList.add('loading');
+            loginBtn.disabled = true;
+
+            try {
+                // Simulate API call (replace with actual API endpoint)
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Handle remember me
+                if (rememberMe) {
+                    localStorage.setItem('rememberedMatricNumber', matricNumber);
+                } else {
+                    localStorage.removeItem('rememberedMatricNumber');
+                }
+
+                showAlert('Login successful! Redirecting...', 'success');
+
+                // Redirect after a delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } catch (error) {
+                showAlert('Login failed. Please check your credentials and try again.', 'error');
+            } finally {
+                loginBtn.classList.remove('loading');
+                loginBtn.disabled = false;
+            }
+        });
+
+        // Load remembered matric number
+        window.addEventListener('load', function() {
+            const rememberedMatricNumber = localStorage.getItem('rememberedMatricNumber');
+            if (rememberedMatricNumber) {
+                matricNumberInput.value = rememberedMatricNumber;
+                document.getElementById('rememberMe').checked = true;
+            }
+        });
+
+        // Social login handlers (placeholder)
+        document.querySelectorAll('.social-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showAlert('Social login will be implemented soon!', 'error');
+            });
+        });
+
+        // Forgot password link
+        document.querySelector('.forgot-password').addEventListener('click', function(e) {
+            e.preventDefault();
+            showAlert('Password reset functionality coming soon!', 'error');
+        });
+
+        // Clear error on input
+        matricNumberInput.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                document.getElementById('matricNumberError').classList.remove('show');
+                this.classList.remove('error');
+            }
+        });
+
+        passwordInput_val.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                document.getElementById('passwordError').classList.remove('show');
+                this.classList.remove('error');
+            }
+        });
+    </script>
+</body>
+</html>
