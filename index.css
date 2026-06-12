@@ -316,7 +316,7 @@
         padding: clamp(1rem, 3vw, 1.5rem);
     }
     .hero .hero-caption-inner {
-        padding: clamp(1.5rem, 3vw, 2rem);
+        padding: clamp(1.7rem, 3vw, 2rem);
     }
     .hero .top {
         font-size: clamp(3rem, 5vw, 4.2rem);
@@ -334,7 +334,7 @@
         padding: 0.75rem;
     }
     .hero .hero-caption-inner {
-        padding: 1.5rem 1.25rem;
+        padding: 1.8rem 1.25rem;
         background-color: rgba(8, 12, 20, 0.78);
         border-radius: 16px;
     }
@@ -354,7 +354,7 @@
 
 @media (max-width: 540px) {
     .hero {
-        min-height: 65vh;
+        min-height: 85vh;
     }
     .hero .hero-caption-inner {
         padding: 1.25rem 1rem;
@@ -362,7 +362,7 @@
         background-color: rgba(8, 12, 20, 0.85);
     }
     .hero .carousel-item video {
-        height: 65vh;
+        height: 85vh;
     }
     .hero .top {
         font-size: clamp(2.2rem, 8vw, 2.6rem);
@@ -377,6 +377,33 @@
         align-items: flex-end;
     }
 }
+
+@media (max-width: 390px) {
+    .hero {
+        min-height: 85vh;
+    }
+    .hero .hero-caption-inner {
+        padding: 1.25rem 1rem;
+        border-radius: 14px;
+        background-color: rgba(8, 12, 20, 0.85);
+    }
+    .hero .carousel-item video {
+        height: 85vh;
+    }
+    .hero .top {
+        font-size: clamp(2.2rem, 8vw, 2.6rem);
+        line-height: 1.05;
+    }
+    .hero .text {
+        font-size: clamp(0.95rem, 2.5vw, 1rem);
+        max-width: 100%;
+        margin: 1rem auto 0;
+    }
+    .hero .hero-caption {
+        align-items: flex-end;
+    }
+}
+
 .mid_sec {
     min-height: auto;
     background-color: rgb(233, 231, 231);
